@@ -18,8 +18,8 @@ func TestVignereCipher(t *testing.T) {
 		{
 			name: "Plain Text or key contains non-uppercase letters",
 			args: args{
-				plainText: "Attackatdawn",
-				key:       "LEMON",
+				plainText: "Iloveyou",
+				key:       "Yero",
 			},
 			want:    "",
 			wantErr: true,
@@ -27,10 +27,10 @@ func TestVignereCipher(t *testing.T) {
 		{
 			name: "Success",
 			args: args{
-				plainText: "ATTACKATDAWN",
-				key:       "LEMON",
+				plainText: "ILOVEYOU",
+				key:       "YERO",
 			},
-			want:    "LXFOPVEFRNHR",
+			want:    "GPFJCCFI",
 			wantErr: false,
 		},
 	}
@@ -64,7 +64,7 @@ func TestVignereDecipher(t *testing.T) {
 			name: "Cipher Text or key contains non-uppercase letters",
 			args: args{
 				cipherText: "LXFOPVEFRNHR",
-				key:        "lemon",
+				key:        "yero",
 			},
 			want:    "",
 			wantErr: true,
@@ -72,10 +72,10 @@ func TestVignereDecipher(t *testing.T) {
 		{
 			name: "Success",
 			args: args{
-				cipherText: "LXFOPVEFRNHR",
-				key:        "LEMON",
+				cipherText: "GPFJCCFI",
+				key:        "YERO",
 			},
-			want:    "ATTACKATDAWN",
+			want:    "ILOVEYOU",
 			wantErr: false,
 		},
 	}
