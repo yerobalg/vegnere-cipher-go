@@ -1,4 +1,4 @@
-package VegnereCipher
+package VignereCipher
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"errors"
 )
 
-func vegnereCipher(plainText string, key string) (string, error) {
+func vignereCipher(plainText string, key string) (string, error) {
 	if !regexp.MustCompile(`^[A-Z]+$`).MatchString(plainText) || !regexp.MustCompile(`^[A-Z]+$`).MatchString(key) {
 		return "", errors.New("Only uppercase letters are allowed")
 	}
@@ -39,7 +39,7 @@ func vegnereCipher(plainText string, key string) (string, error) {
 	return string(decipheredText), nil
 }
 
-func vegnereDecipher(cipherText string, key string) (string, error) {
+func vignereDecipher(cipherText string, key string) (string, error) {
 	if !regexp.MustCompile(`^[A-Z]+$`).MatchString(cipherText) || !regexp.MustCompile(`^[A-Z]+$`).MatchString(key) {
 		return "", errors.New("Only uppercase letters are allowed")
 	}
