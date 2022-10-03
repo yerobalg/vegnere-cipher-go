@@ -1,8 +1,8 @@
 package VignereCipher
 
 import (
-	"regexp"
 	"errors"
+	"regexp"
 )
 
 func vignereCipher(plainText string, key string) (string, error) {
@@ -42,7 +42,7 @@ func vignereDecipher(cipherText string, key string) (string, error) {
 	if !regexp.MustCompile(`^[A-Z]+$`).MatchString(cipherText) || !regexp.MustCompile(`^[A-Z]+$`).MatchString(key) {
 		return "", errors.New("Only uppercase letters are allowed")
 	}
-	
+
 	// if key length is less than the cipherText length, then we need to repeat the key until it is the same length as the cipherText
 	for len(key) < len(cipherText) {
 		key += key
@@ -76,4 +76,3 @@ func cipherFormula(char int, key int) int {
 func dechipherFormula(char int, key int) int {
 	return (char - key + 26) % 26
 }
-
