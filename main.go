@@ -6,7 +6,9 @@ import (
 )
 
 func vignereCipher(plainText string, key string) (string, error) {
-	if !regexp.MustCompile(`^[A-Z]+$`).MatchString(plainText) || !regexp.MustCompile(`^[A-Z]+$`).MatchString(key) {
+	// Check if the plainText and key only contains uppercase letters
+	upperCaseOnly := regexp.MustCompile(`^[A-Z]+$`)
+	if !upperCaseOnly.MatchString(plainText) || !upperCaseOnly.MatchString(key) {
 		return "", errors.New("Only uppercase letters are allowed")
 	}
 
