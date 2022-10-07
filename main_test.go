@@ -1,10 +1,10 @@
-package VignereCipher
+package VigenereCipher
 
 import (
 	"testing"
 )
 
-func TestVignereCipher(t *testing.T) {
+func TestVigenereCipher(t *testing.T) {
 	type args struct {
 		plainText string
 		key       string
@@ -37,19 +37,19 @@ func TestVignereCipher(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := vignereCipher(tt.args.plainText, tt.args.key)
+			got, err := vigenereCipher(tt.args.plainText, tt.args.key)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("vignereCipher() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("vigenereCipher() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if got != tt.want {
-				t.Errorf("vignereCipher() = %v, want %v", got, tt.want)
+				t.Errorf("vigenereCipher() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func TestVignereDecipher(t *testing.T) {
+func TestVigenereDecipher(t *testing.T) {
 	type args struct {
 		cipherText string
 		key        string
@@ -82,13 +82,13 @@ func TestVignereDecipher(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := vignereDecipher(tt.args.cipherText, tt.args.key)
+			got, err := vigenereDecipher(tt.args.cipherText, tt.args.key)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("vignereDecipher() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("vigenereDecipher() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if got != tt.want {
-				t.Errorf("vignereDecipher() = %v, want %v", got, tt.want)
+				t.Errorf("vigenereDecipher() = %v, want %v", got, tt.want)
 			}
 		})
 	}

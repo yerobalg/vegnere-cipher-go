@@ -1,11 +1,11 @@
-package VignereCipher
+package VigenereCipher
 
 import (
 	"errors"
 	"regexp"
 )
 
-func vignereCipher(plainText string, key string) (string, error) {
+func vigenereCipher(plainText string, key string) (string, error) {
 	// Check if the plainText and key only contains uppercase letters
 	upperCaseOnly := regexp.MustCompile(`^[A-Z]+$`)
 	if !upperCaseOnly.MatchString(plainText) || !upperCaseOnly.MatchString(key) {
@@ -38,7 +38,7 @@ func vignereCipher(plainText string, key string) (string, error) {
 	return string(decipheredText), nil
 }
 
-func vignereDecipher(cipherText string, key string) (string, error) {
+func vigenereDecipher(cipherText string, key string) (string, error) {
 	if !regexp.MustCompile(`^[A-Z]+$`).MatchString(cipherText) || !regexp.MustCompile(`^[A-Z]+$`).MatchString(key) {
 		return "", errors.New("Only uppercase letters are allowed")
 	}
